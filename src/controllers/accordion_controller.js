@@ -9,12 +9,31 @@ export default class extends Controller {
         this.activate(this.index);
     }
 
-    switchItem(e) {
-      //  let currentIndex = this.index;
-        if (this.index != -1) {
-            this.deactivate(this.index);
+    toggle(ind) {
+        this.nameTargets[ind].classList.toggle('active');
+        if(!!this.contentTargets[ind].style.maxHeight) {
+            this.contentTargets[ind].style.maxHeight = null;
+            this.index = -1;
+        } else {
+            this.contentTargets[ind].style.maxHeight = this.contentTargets[ind].scrollHeight + "px";
+            this.index = ind;
         }
-        console.log(this.nameTargets)
+        
+    }
+    switchItem(e) {
+        let currentIndex = this.nameTargets.indexOf(e.target);
+        console.log('current', currentIndex);
+        if (this.index==currentIndex) {
+            this.toggle(currentIndex);
+            return;
+        }
+        
+        if (this.index != -1) {
+          //  this.deactivate(this.index);
+          this.toggle(this.index);
+        }
+        this.toggle(currentIndex);
+        /* console.log(this.nameTargets)
         this.nameTargets.forEach((element, index) => {
             if (element === e.target) {
                 if(index==this.index) {
@@ -25,7 +44,7 @@ export default class extends Controller {
                     this.index = index;
                 }
             }
-        });
+        }); */
        
     }
 
