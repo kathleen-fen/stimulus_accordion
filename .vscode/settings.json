@@ -1,0 +1,13 @@
+{
+    "editor.formatOnSave": true,
+    "eslint.format.enable": true,
+    "editor.codeActionsOnSave":{
+        "source.fixAll.eslint":true,
+        "source.fixAll": true,
+    },
+    "eslint.options": { "configFile": "d:/Projects/eslint-project/.eslintrc" },
+    "eslint.codeAction.showDocumentation": {
+
+        "enable": true
+    }
+}

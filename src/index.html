@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div data-controller="hello">
+        <input data-hello-target="name" type="text">
+        <button data-action="click->hello#greet">Greet</button>
+      </div>
+
+      <div data-controller="clipboard">
+        PIN: <input data-clipboard-target="source" type="text" value="1234" readonly>
+        <button data-action="click->clipboard#copy">Copy to Clipboard</button>
+      </div>
+
+      <div data-controller="slideshow">
+        <button data-action="slideshow#previous"> ← </button>
+        <button data-action="slideshow#next"> → </button>
+      
+        <div data-slideshow-target="slide">🐵</div>
+        <div data-slideshow-target="slide">🙈</div>
+        <div data-slideshow-target="slide">🙉</div>
+        <div data-slideshow-target="slide">🙊</div>
+      </div>
+
+      <div data-controller="accordion">
+        <h2>Animated Accordion</h2>
+        <p>Click on the buttons to open the collapsible content.</p>
+        
+        <button class="accordion" data-accordion-target="name" data-action="click->accordion#switchItem">Section 1</button>
+        <div class="panel" data-accordion-target="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        
+        <button class="accordion" data-accordion-target="name" data-action="click->accordion#switchItem">Section 2</button>
+        <div class="panel" data-accordion-target="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        
+        <button class="accordion" data-accordion-target="name" data-action="click->accordion#switchItem">Section 3</button>
+        <div class="panel" data-accordion-target="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </div>
+
+
+</body>
+</html>
